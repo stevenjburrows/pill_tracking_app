@@ -8,10 +8,11 @@ A client has asked for an app where they can mark that the have taken a pill and
 ### MVP
 
 The app should allow the user to create and edit pills.  
+The app should be able to create and edit users
 Pills should have a name, type and strength
-The app should allow the user to create and edit pill type i.e painkillers, vitamins, etc
-When you take a pill the Time should be recorded 
-The app should show the pills available and also able to view what pills you have taken.
+The user should have a name and age
+When you takes a pill the time should be recorded for that user and pill
+The app should show the pills available and also able to view what pills you have taken for a given user.
 
 
 ### Possible extension
@@ -19,3 +20,4 @@ The app should show the pills available and also able to view what pills you hav
 Pills should have a maximum amount per day and this is counted down when a pill is taken
 Deactivate a pill that is no longer used so can’t be selected.
 Show pills taken for a a given day
+Create another table for pill strength where it has two variables, strngth number and strength units i.e. milligrams and micrograms
