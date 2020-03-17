@@ -1,7 +1,12 @@
 <h2>Take a pill</h2>
 
-<p><%= @user.id %></p>
 <form class="form-wrapper" method="post" action="/taken">
+
+    <input type="hidden" name="user_id" value="<%= @user.id %>">
+
+    <% time = Time.now %>
+    <input type="hidden" name="time_taken" value="<%= time %>">
+
     <label for="quantity">Quantity: </label>
     <input type="number" name="quantity" id="quantity">
 
@@ -10,14 +15,8 @@
       <% @pills.each do |pill| %>
         <option value="<%= pill.id %>"><%= pill.name %>, <%= pill.strength %>, <%= pill.type %></option>
       <% end %>
-    </select
-
-    <% @selected_user = @user.id %>
-
-    <input type="hidden" name="user_id" value="1">
-    <input type="hidden" name="time_taken" value="<%= Time.now %>">
+    </select>
+    
     <input type="submit" value="Take Pill">
-
-    <p><%= @selected_user %></p>
 
 </form>
