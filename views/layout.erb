@@ -4,7 +4,16 @@
     <meta charset="utf-8">
     <title>Pill Tracker</title>
   </head>
+  <nav>
+    <ul>
+      <li><a href="/pills">View Pills</a></li>
+      <li><a href="/pills/add">Add a new pill</a></li>
+      <li><a href="/users">View Users</a></li>
+      <li><a href="/users/add">Add a new user</a></li>
+    </ul>
+  </nav>
   <body>
-
+        <%= yield %>
   </body>
+  <footer><a href="/">Back to home</a></footer>
 </html>

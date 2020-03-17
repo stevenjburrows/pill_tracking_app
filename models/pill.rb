@@ -5,9 +5,9 @@ class Pill
   attr_reader :id, :name, :type, :strength
 
   def initialize ( options )
-    @id = options['id'].to_i if options['id'],
-    @name = options['name'],
-    @type = options['type'],
+    @id = options['id'].to_i if options['id']
+    @name = options['name']
+    @type = options['type']
     @strength = options['strength']
 
   end
@@ -38,6 +38,17 @@ class Pill
     values = [@name, @type, @strength, @id]
     SqlRunner.run(sql, values)
 
+  end
+
+  def taken
+    sql = "SELECT pills_taken.* FROM pills_taken
+          INNER JOIN pills
+          on pills.id = pills_taken.pill_id
+          where pills.id = $1"
+    values = [@id]
+    pills_taken = SqlRunner.run(sql, values)
+    result = Taken.new(pills_taken.first)
+    return result
   end
 
   def self.all

@@ -1,54 +1,83 @@
 require_relative('../db/sql_runner')
+require_relative('taken')
 
 class User
 
-  attr_reader :id, :name, :age
+  attr_reader :id, :username, :age
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
-    @name = options['name']
+    @username = options['username']
     @age = options['age'].to_i
   end
 
   def save
     sql = "INSERT INTO users (
-          name,
+          username,
           age
           )
       VALUES (
           $1, $2
             )
       RETURNING *"
-    values  = [@name, @age]
+    values  = [@username, @age]
     user = SqlRunner.run(sql, values)
     @id = user.first['id'].to_i
   end
 
   def update
     sql = "UPDATE users SET (
-          name,
+          username,
           type,
           strength
           ) =
           ( $1, $2)
       WHERE id = $3"
-    values = [@name, @age, @id]
+    values = [@username, @age, @id]
     SqlRunner.run(sql, values)
 
   end
 
+
   def self.all
-    sql = "SELCT * FROM users"
+    sql = "SELECT * FROM users"
     users = SqlRunner.run(sql)
     result = users.map { |user| User.new(user)  }
-    return user
+    return result
   end
 
-  def find(id)
+  def self.find(id)
     sql = "SELECT * FROM users where id = $1"
-    values = ['id']
-    user = SqlRunner(sql, values)
+    values = [id]
+    user = SqlRunner.run(sql, values)
     result = User.new(user.first)
-    result result
+    return result
   end
+
+  def pills
+    sql = "SELECT pills.* FROM users
+          INNER JOIN pills_taken
+          on pills_taken.user_id = users.id
+          INNER JOIN pills
+          on pills.id = pills_taken.pill_id
+          where users.id = $1"
+    values = [@id]
+    pills = SqlRunner.run(sql, values)
+    result = pills.map { |pill| Pill.new(pill) }
+    return result
+  end
+
+  # def pills
+  #   sql = "SELECT pills_taken.* FROM users
+  #         INNER JOIN pills_taken
+  #         on pills_taken.user_id = users.id
+  #         INNER JOIN pills
+  #         on pills.id = pills_taken.pill_id
+  #         where users.id = $1"
+  #   values = [@id]
+  #   pills_taken = SqlRunner.run(sql, values)
+  #   result = pills_taken.map { |pill_taken| Taken.new(pill_taken) }
+  #   return result
+  # end
+
 end

@@ -1,0 +1,8 @@
+<h1>List of all users available</h1>
+
+<p>
+  <% for user in @users %>
+  <h2 class="users" ><a href="/users/<%= user.id %>"><%= user.username %></a>, <%= user.age %></h2>
+  <hr>
+  <% end %>
+</p>

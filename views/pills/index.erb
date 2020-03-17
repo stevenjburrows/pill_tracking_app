@@ -1,0 +1,8 @@
+<h1>List of all pills available</h1>
+
+<p>
+  <% for pill in @pills %>
+  <h2 class="pills" ><a href="/pills/<%= pill.id %>"><%= pill.name %></a>, <%= pill.type %>, <%= pill.strength %></h2>
+  <hr>
+  <% end %>
+</p>

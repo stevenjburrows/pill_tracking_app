@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
+  username VARCHAR(255),
   age INT
 );
 
@@ -19,5 +19,6 @@ CREATE TABLE pills_taken (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   pill_id INT REFERENCES pills(id) ON DELETE CASCADE,
-  quantity INT
+  quantity INT,
+  time_taken TIMESTAMP
 );
