@@ -28,8 +28,7 @@ class User
   def update
     sql = "UPDATE users SET (
           username,
-          type,
-          strength
+          age
           ) =
           ( $1, $2)
       WHERE id = $3"
@@ -66,18 +65,5 @@ class User
     result = pills.map { |pill| Pill.new(pill) }
     return result
   end
-
-  # def pills
-  #   sql = "SELECT pills_taken.* FROM users
-  #         INNER JOIN pills_taken
-  #         on pills_taken.user_id = users.id
-  #         INNER JOIN pills
-  #         on pills.id = pills_taken.pill_id
-  #         where users.id = $1"
-  #   values = [@id]
-  #   pills_taken = SqlRunner.run(sql, values)
-  #   result = pills_taken.map { |pill_taken| Taken.new(pill_taken) }
-  #   return result
-  # end
 
 end

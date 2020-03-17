@@ -27,11 +27,23 @@ get '/users/:id' do
   erb (:"users/show")
 end
 
+get '/users/:id/edit' do
+  @user = User.find(params['id'])
+  erb (:"users/edit")
+end
+
+
 
 post '/users' do
   @user = User.new( params )
   @user.save()
   erb( :"users/create" )
+end
+
+post '/users/:id' do
+  user = User.new(params)
+  user.update
+  redirect to "/users/#{params['id']}"
 end
 
 post '/taken' do
