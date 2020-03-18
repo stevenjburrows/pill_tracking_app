@@ -1,21 +1,12 @@
-<h2>Add a new pill</h2>
-<form method="POST" action="/users">
-  <div class="form-wrapper">
+<h2>Add a new user</h2>
+<form method="POST" class="add-form" action="/users">
 
-    <div class="form-el">
       <label for="username">Name:</label>
       <input type="text" name="username" id="username"/>
-    </div>
 
-    <div class="form-el">
       <label for="age">Age:</label>
       <input type="number" name="age" id="age"/>
-    </div>
 
+      <input type="submit" value="Add Users" id="submit-btn"/>
 
-    <div class="form-el">
-      <input type="submit" value="Add Users"/>
-    </div>
-
-  </div>
 </form>

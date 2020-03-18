@@ -1,6 +1,6 @@
-<h2>Take a pill</h2>
+<h2><%= @user.username %> take a pill</h2>
 
-<form class="form-wrapper" method="post" action="/taken">
+<form class="add-form" method="post" action="/taken">
 
     <input type="hidden" name="user_id" value="<%= @user.id %>">
 
@@ -17,6 +17,6 @@
       <% end %>
     </select>
     
-    <input type="submit" value="Take Pill">
+    <input type="submit" id="submit-btn" value="Take Pill">
 
 </form>

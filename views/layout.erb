@@ -12,18 +12,18 @@
       <header class="flex-item header">
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/pills">View Pills</a></li>
-            <li><a href="/pills/add">Add a new pill</a></li>
-            <li><a href="/users">View Users</a></li>
-            <li><a href="/users/add">Add a new user</a></li>
+            <li><a title="Home page" href="/"><i class="fas fa-home"></i></a></li>
+            <li><a title="View pills" href="/pills"><i class="fas fa-pills"></i></a></li>
+            <li><a title="Add a pill" href="/pills/add"><i class="fas fa-plus"></i><i class="fas fa-pills"></i></a></li>
+            <li><a title="View users" href="/users"><i class="fas fa-users"></i></a></li>
+            <li><a title="Add a user" href="/users/add"><i class="fas fa-user-plus"></i></a></li>
           </ul>
         </nav>
       </header>
-      <aside class="flex-item sidebar">Sidebar</aside>
+      <aside class="flex-item sidebar"></aside>
       <main class="flex-item main"><%= yield %></main>
-      <aside class="flex-item sidebar">Sidebar</aside>
-      <footer class="flex-item footer"><a href="/">Back to home</a></footer>
+      <aside class="flex-item sidebar"></aside>
+      <footer class="flex-item footer"></footer>
     </section>
 
   </body>

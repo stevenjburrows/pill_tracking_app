@@ -1,5 +1,5 @@
 <h2>Edit <%= @user.username %></h2>
-<form method="POST" action="/users/<%= @user.id %>">
+<form method="POST" class="add-form" action="/users/<%= @user.id %>">
 
       <label for="username">Username:</label>
       <input type="text" name="username" id="username" value="<%= @user.username %>"/>
@@ -7,6 +7,6 @@
       <label for="age">Age:</label>
       <input type="number" name="age" id="age" value="<%= @user.age%>"/>
 
-      <input type="submit" value="Edit User Details"/>
+      <input type="submit" value="Edit User Details" id="submit-btn"/>
 
 </form>

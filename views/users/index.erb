@@ -2,6 +2,18 @@
 
 <p>
   <% for user in @users %>
-  <h2 class="users" ><a href="/users/<%= user.id %>"><%= user.username %>, <%= user.age %></a></h2>
+    <div class="card">
+      <div class="card-top">
+        <img src="/sky.jpg" alt="clouds with rays of the sun">
+         <h3><a href="/users/<%= user.id %>"><%= user.username %></a></h3>
+      </div>
+      <div class="card-content">
+        <h3><%= user.age %></h3>
+      </div>
+      <div class="icons">
+        <a title="Take a pill" href="/users/<%= user.id %>/take_pill"><i class="fas fa-user-check"></i></a>
+        <a title="Edit the user" href="/users/<%= user.id %>/edit"><i class="fas fa-user-edit"></i></a>
+      </div>
+    </div>
   <% end %>
 </p>
