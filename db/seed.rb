@@ -13,6 +13,3 @@ time = Time.now
 
 taken1 = Taken.new('user_id' => user1.id, 'pill_id' => pill1.id, 'quantity' => 2, 'time_taken' => time)
 taken1.save
-
-binding.pry
-nil
