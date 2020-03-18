@@ -81,6 +81,9 @@
   padding: 5px 20px 0px 20px;
 }
 
+h1 {
+  color: #2f323a;
+}
 
    
 
@@ -214,6 +217,7 @@ ul {
 
 .user_links a {
   font-size: larger;
+  color: #2f323a;
   padding-right: 1em;
   padding-left: 1em;
 }
@@ -260,3 +264,4 @@ ul {
 #submit-btn:hover {
   background: #19B3D3;
 }
+]

@@ -10,5 +10,5 @@ also_reload('../models/*')
 post '/taken' do
   @taken = Taken.new( params )
   @taken.save()
-  redirect to ("/users/#{params['id']}")
+  redirect to ("/users/")
 end
