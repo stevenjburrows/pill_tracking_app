@@ -2,18 +2,29 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>Pill Tracker</title>
   </head>
-  <nav>
-    <ul>
-      <li><a href="/pills">View Pills</a></li>
-      <li><a href="/pills/add">Add a new pill</a></li>
-      <li><a href="/users">View Users</a></li>
-      <li><a href="/users/add">Add a new user</a></li>
-    </ul>
-  </nav>
   <body>
-        <%= yield %>
+
+    <section class="flex-container">
+      <header class="flex-item header">
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/pills">View Pills</a></li>
+            <li><a href="/pills/add">Add a new pill</a></li>
+            <li><a href="/users">View Users</a></li>
+            <li><a href="/users/add">Add a new user</a></li>
+          </ul>
+        </nav>
+      </header>
+      <aside class="flex-item sidebar">Sidebar</aside>
+      <main class="flex-item main"><%= yield %></main>
+      <aside class="flex-item sidebar">Sidebar</aside>
+      <footer class="flex-item footer"><a href="/">Back to home</a></footer>
+    </section>
+
   </body>
-  <footer><a href="/">Back to home</a></footer>
 </html>

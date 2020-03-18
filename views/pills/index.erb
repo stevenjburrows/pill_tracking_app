@@ -2,7 +2,17 @@
 
 <p>
   <% for pill in @pills %>
-  <h2 class="pills" ><a href="/pills/<%= pill.id %>"><%= pill.name %></a>, <%= pill.type %>, <%= pill.strength %></h2>
-  <hr>
+    <!--Profile card start-->
+      <div class="card">
+        <div class="card-top">
+          <img src="/pills.jpg" alt="pills on a blue background">
+          <h3><a href="/pills/<%= pill.id %>"><%= pill.name %></a></h3>
+        </div>
+        <div class="card-content">
+          <p><%= pill.type %></p>
+          <p>Strength: <%= pill.strength %></p>
+        </div>
+      </div>
+      <!--Profile card end-->
   <% end %>
 </p>

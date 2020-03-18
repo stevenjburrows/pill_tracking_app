@@ -2,7 +2,6 @@
 
 <p>
   <% for user in @users %>
-  <h2 class="users" ><a href="/users/<%= user.id %>"><%= user.username %></a>, <%= user.age %></h2>
-  <hr>
+  <h2 class="users" ><a href="/users/<%= user.id %>"><%= user.username %>, <%= user.age %></a></h2>
   <% end %>
 </p>
