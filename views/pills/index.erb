@@ -10,6 +10,7 @@
         <div class="card-content">
           <p><%= pill.type %></p>
           <p>Strength: <%= pill.strength %></p>
+          <p><a title="Edit the pill" href="/pills/<%= pill.id %>/edit"><i class="fas fa-edit"></i></a></p>
         </div>
       </div>
   <% end %>

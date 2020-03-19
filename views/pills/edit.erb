@@ -1,0 +1,15 @@
+<h2>Edit <%= @pill.name %></h2>
+<form method="POST" class="add-form" action="/pills/<%= @pill.id %>">
+
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" value="<%= @pill.name %>"/>
+
+      <label for="type">Type:</label>
+      <input type="text" name="type" id="type" value="<%= @pill.type%>"/>
+
+      <label for="strength">Strength:</label>
+      <input type="text" name="strength" id="strength" value="<%= @pill.strength%>"/>
+
+      <input type="submit" value="Edit User Details" id="submit-btn"/>
+
+</form>

@@ -20,8 +20,19 @@ get '/pills/:id' do
   erb(:"pills/show")
 end
 
+get '/pills/:id/edit' do
+  @pill = Pill.find(params['id'])
+  erb (:"pills/edit")
+end
+
 post '/pills' do
   @pill = Pill.new( params )
   @pill.save()
   erb( :"pills/create" )
+end
+
+post '/pills/:id' do
+  pill = Pill.new(params)
+  pill.update
+  redirect to "/pills/#{params['id']}"
 end
