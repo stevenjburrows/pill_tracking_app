@@ -1,10 +1,10 @@
 require('sinatra')
-require('sinatra/contrib/all')
+# require('sinatra/contrib/all')
 require_relative('../models/pill')
 require_relative('../models/user')
 require_relative('../models/taken')
 
-also_reload('../models/*')
+# also_reload('../models/*')
 
 get '/pills' do
   @pills = Pill.all

@@ -52,6 +52,10 @@ class User
     result = User.new(user.first)
     return result
   end
+# for a given user id
+# search the database for all the pills they have taken
+# create a new instance for each of these pills
+# return the result to be used
 
   def pills
     sql = "SELECT pills.* FROM users

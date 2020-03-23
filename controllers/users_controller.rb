@@ -1,11 +1,11 @@
 require('sinatra')
-require('sinatra/contrib/all')
+# require('sinatra/contrib/all')
 
 require_relative('../models/user')
 require_relative('../models/pill')
 require_relative('../models/taken')
 require_relative('taken_controller')
-also_reload('../models/*')
+# also_reload('../models/*')
 
 get '/users' do
   @users = User.all

@@ -1,5 +1,4 @@
 require('time')
-require('pry')
 require_relative('../models/pill')
 require_relative('../models/user')
 require_relative('../models/taken')
